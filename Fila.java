@@ -63,7 +63,7 @@ public class Fila {
 
         No primeiro = frente;
 
-        while (primeiro != null) { 
+        while (primeiro.prox != null) { 
             IO.print(primeiro.elemento + " ");
             primeiro = primeiro.prox;
         }
@@ -79,7 +79,7 @@ public class Fila {
     public boolean buscar(int x) {
         try {
             No primeiro = frente;
-            while(primeiro != null) {
+            while(primeiro.prox != null) {
                 if(primeiro.elemento == x) return true;
                 primeiro = primeiro.prox;
             }
@@ -94,7 +94,7 @@ public class Fila {
         int even = 0;
         int odd = 0;
         No primeiro = frente;
-        while (primeiro != null) { 
+        while (primeiro.prox != null) { 
             if(primeiro.elemento % 2 == 0) even++;
             else odd++;
             primeiro = primeiro.prox;
@@ -106,7 +106,7 @@ public class Fila {
     public int soma() {
         int soma = 0;
         No primeiro = frente;
-        while (primeiro != null) { 
+        while (primeiro.prox != null) { 
             soma += primeiro.elemento;
             primeiro = primeiro.prox;
         }
@@ -117,7 +117,7 @@ public class Fila {
         if(this.vazio()) throw new RuntimeException("Fila vazia...");
         No primeiro = frente;
         int maior = primeiro.elemento;
-        while (primeiro != null) { 
+        while (primeiro.prox != null) { 
             if(primeiro.elemento > maior) maior = primeiro.elemento;
             primeiro = primeiro.prox;
         }
@@ -128,7 +128,7 @@ public class Fila {
         if(this.vazio()) throw new RuntimeException("Fila vazia...");
         No primeiro = frente;
         int menor = primeiro.elemento;
-        while (primeiro != null) { 
+        while (primeiro.prox != null) { 
             if(primeiro.elemento < menor) menor = primeiro.elemento;
             primeiro = primeiro.prox;
         }
@@ -141,7 +141,7 @@ public class Fila {
         while(!this.vazio()) {
             this.dequeue();
         }
-        while (primeiro != null) { 
+        while (primeiro.prox != null) { 
             if(k % primeiro.elemento != 0) {
                 this.enqueue(primeiro.elemento);
             }
@@ -163,7 +163,7 @@ public class Fila {
         int index = 0;
 
         No primeiro = frente;
-        while(primeiro != null) {
+        while(primeiro.prox != null) {
             lista[index++] = primeiro.elemento;
             primeiro = primeiro.prox;
         }
